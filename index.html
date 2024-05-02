@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<base target="_top">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<title>Vita in volo</title>
+	
+	<link rel="shortcut icon" type="image/x-icon" href="docs/images/favicon.ico" />
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+	<style>
+		html, body {
+			height: 100%;
+			margin: 0;
+		}
+		.leaflet-container {
+			height: 400px;
+			width: 600px;
+			max-width: 100%;
+			max-height: 100%;
+		}
+	</style>
+
+	
+</head>
+<body>
+
+
+
+<div id="map" style="width: 1448px; height: 1448px;"></div>
+<script>
+
+	var map
+	map = L.map('map').setView([0.0, 0.0], 2,5);
+
+	
+
+	const tiles = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+		maxZoom: 19,
+		attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+	}).addTo(map);
+
+	var marker
+	
+marker = L.marker([52.3676, 4.9041]).addTo(map).bindPopup('<b>Amsterdam</b>');
+marker = L.marker([43.6158, 13.5189]).addTo(map).bindPopup('<b>Ancona</b>');
+marker = L.marker([-23.6509, -70.3975]).addTo(map).bindPopup('<b>Antofagasta</b>');
+marker = L.marker([37.9838, 23.7275]).addTo(map).bindPopup('<b>Atene</b>');
+marker = L.marker([33.7490, -84.3880]).addTo(map).bindPopup('<b>Atlanta</b>');
+marker = L.marker([41.3851, 2.1734]).addTo(map).bindPopup('<b>Barcellona</b>');
+marker = L.marker([52.5200, 13.4050]).addTo(map).bindPopup('<b>Berlino</b>');
+marker = L.marker([44.4949, 11.3426]).addTo(map).bindPopup('<b>Bologna</b>');
+marker = L.marker([51.1079, 17.0385]).addTo(map).bindPopup('<b>Breslavia</b>');
+marker = L.marker([-34.6037, -58.3816]).addTo(map).bindPopup('<b>Buenos Aires</b>');
+marker = L.marker([37.5079, 15.0830]).addTo(map).bindPopup('<b>Catania</b>');
+marker = L.marker([4.9225, -52.3135]).addTo(map).bindPopup('<b>Cayenne</b>');
+marker = L.marker([41.8781, -87.6298]).addTo(map).bindPopup('<b>Chicago</b>');
+marker = L.marker([-43.5321, 172.6362]).addTo(map).bindPopup('<b>Christchurch</b>');
+marker = L.marker([6.9271, 79.8612]).addTo(map).bindPopup('<b>Colombo (Sri Lanka)</b>');
+marker = L.marker([51.1657, 10.4515]).addTo(map).bindPopup('<b>Colonia</b>');
+marker = L.marker([-75.0999, 123.3657]).addTo(map).bindPopup('<b>Concordia Station</b>');
+marker = L.marker([50.0647, 19.9450]).addTo(map).bindPopup('<b>Cracovia</b>');
+marker = L.marker([42.3314, -83.0458]).addTo(map).bindPopup('<b>Detroit</b>');
+marker = L.marker([25.2769, 51.5171]).addTo(map).bindPopup('<b>Doha</b>');
+marker = L.marker([-66.700415, 139.82805]).addTo(map).bindPopup('<b>Dumont d\'Urville Station</b>');
+marker = L.marker([50.9848, 11.0299]).addTo(map).bindPopup('<b>Erfurt</b>');
+marker = L.marker([50.1109, 8.6821]).addTo(map).bindPopup('<b>Francoforte</b>');
+marker = L.marker([28.1248, -15.4300]).addTo(map).bindPopup('<b>Gran Canaria</b>');
+marker = L.marker([-42.8821, 147.3272]).addTo(map).bindPopup('<b>Hobart</b>');
+marker = L.marker([28.5712, -17.8580]).addTo(map).bindPopup('<b>La Palma</b>');
+marker = L.marker([-29.9045, -71.2480]).addTo(map).bindPopup('<b>La Serena</b>');
+marker = L.marker([35.5131, 12.6164]).addTo(map).bindPopup('<b>Lampedusa</b>');
+marker = L.marker([53.4084, -2.9916]).addTo(map).bindPopup('<b>Liverpool</b>');
+marker = L.marker([51.5074, -0.1278]).addTo(map).bindPopup('<b>Londra</b>');
+marker = L.marker([34.0522, -118.2437]).addTo(map).bindPopup('<b>Los Angeles</b>');
+marker = L.marker([40.4168, -3.7038]).addTo(map).bindPopup('<b>Madrid</b>');
+marker = L.marker([-37.8136, 144.9631]).addTo(map).bindPopup('<b>Melbourne</b>');
+marker = L.marker([-74.6843, 164.1309]).addTo(map).bindPopup('<b>Mario Zucchelli Station</b>');
+marker = L.marker([44.9778, -93.2650]).addTo(map).bindPopup('<b>Minneapolis</b>');
+marker = L.marker([48.1351, 11.5820]).addTo(map).bindPopup('<b>Monaco</b>');
+marker = L.marker([45.5017, -73.5673]).addTo(map).bindPopup('<b>Montreal</b>');
+marker = L.marker([40.8518, 14.2681]).addTo(map).bindPopup('<b>Napoli</b>');
+marker = L.marker([40.7128, -74.0060]).addTo(map).bindPopup('<b>New York</b>');
+marker = L.marker([38.1157, 13.3615]).addTo(map).bindPopup('<b>Palermo</b>');
+marker = L.marker([48.8566, 2.3522]).addTo(map).bindPopup('<b>Parigi</b>');
+marker = L.marker([39.9042, 116.4074]).addTo(map).bindPopup('<b>Pechino</b>');
+marker = L.marker([43.7228, 10.4017]).addTo(map).bindPopup('<b>Pisa</b>');
+marker = L.marker([50.0755, 14.4378]).addTo(map).bindPopup('<b>Praga</b>');
+marker = L.marker([36.4340, 28.2170]).addTo(map).bindPopup('<b>Rodi</b>');
+marker = L.marker([41.9028, 12.4964]).addTo(map).bindPopup('<b>Roma</b>');
+marker = L.marker([32.7157, -117.1611]).addTo(map).bindPopup('<b>San Diego</b>');
+marker = L.marker([37.7749, -122.4194]).addTo(map).bindPopup('<b>San Francisco</b>');
+marker = L.marker([-33.4489, -70.6693]).addTo(map).bindPopup('<b>Santiago del Cile</b>');
+marker = L.marker([36.3932, 25.4615]).addTo(map).bindPopup('<b>Santorini</b>');
+marker = L.marker([1.3521, 103.8198]).addTo(map).bindPopup('<b>Singapore</b>');
+marker = L.marker([28.4827, -16.3419]).addTo(map).bindPopup('<b>Tenerife Norte</b>');
+marker = L.marker([43.6047, 1.4442]).addTo(map).bindPopup('<b>Tolosa</b>');
+marker = L.marker([38.0189, 12.5183]).addTo(map).bindPopup('<b>Trapani</b>');
+marker = L.marker([45.6667, 12.2450]).addTo(map).bindPopup('<b>Treviso</b>');
+marker = L.marker([32.2226, -110.9747]).addTo(map).bindPopup('<b>Tucson</b>');
+marker = L.marker([52.2297, 21.0122]).addTo(map).bindPopup('<b>Varsavia</b>');
+marker = L.marker([45.4408, 12.3155]).addTo(map).bindPopup('<b>Venezia</b>');
+marker = L.marker([45.4384, 10.9916]).addTo(map).bindPopup('<b>Verona</b>');
+marker = L.marker([48.2082, 16.3738]).addTo(map).bindPopup('<b>Vienna</b>');
+marker = L.marker([47.3769, 8.5417]).addTo(map).bindPopup('<b>Zurigo</b>');
+marker = L.marker([-77.846323, 166.668235]).addTo(map).bindPopup('<b>McMurdo Station</b>');
+
+
+
+	var polyline = L.polyline([[52.3676, 4.9041],[33.749, -84.388]]).addTo(map);
+polyline = L.polyline([[52.3676, 4.9041],[41.8781, -87.6298]]).addTo(map);
+polyline = L.polyline([[52.3676, 4.9041],[53.4084, -2.9916]]).addTo(map);
+polyline = L.polyline([[52.3676, 4.9041],[45.4642, 9.19]]).addTo(map);
+polyline = L.polyline([[52.3676, 4.9041],[44.9773, -93.2655]]).addTo(map);
+polyline = L.polyline([[52.3676, 4.9041],[45.6667, 12.245]]).addTo(map);
+polyline = L.polyline([[43.6158, 13.5189],[37.5079, 15.083]]).addTo(map);
+polyline = L.polyline([[43.6158, 13.5189],[38.1157, 13.3615]]).addTo(map);
+polyline = L.polyline([[43.6158, 13.5189],[38.0189, 12.5183]]).addTo(map);
+polyline = L.polyline([[-23.6509, -70.3975],[-33.4489, -70.6693]]).addTo(map);
+polyline = L.polyline([[37.9838, 23.7275],[45.4642, 9.19]]).addTo(map);
+polyline = L.polyline([[33.749, -84.388],[45.4642, 9.19]]).addTo(map);
+polyline = L.polyline([[33.749, -84.388],[48.8566, 2.3522]]).addTo(map);
+polyline = L.polyline([[33.749, -84.388],[32.7157, -117.1611]]).addTo(map);
+polyline = L.polyline([[33.749, -84.388],[32.2226, -110.9747]]).addTo(map);
+polyline = L.polyline([[41.3851, 2.1734],[28.1248, -15.43]]).addTo(map);
+polyline = L.polyline([[41.3851, 2.1734],[45.4642, 9.19]]).addTo(map);
+polyline = L.polyline([[52.52, 13.405],[50.1109, 8.6821]]).addTo(map);
+polyline = L.polyline([[52.52, 13.405],[45.4642, 9.19]]).addTo(map);
+polyline = L.polyline([[52.52, 13.405],[38.1157, 13.3615]]).addTo(map);
+polyline = L.polyline([[44.4949, 11.3426],[41.9028, 12.4964]]).addTo(map);
+polyline = L.polyline([[51.1079, 17.0385],[38.1157, 13.3615]]).addTo(map);
+polyline = L.polyline([[-34.6037, -58.3816],[52.3676, 4.9041]]).addTo(map);
+polyline = L.polyline([[37.5079, 15.083],[45.4642, 9.19]]).addTo(map);
+polyline = L.polyline([[4.9225, -52.3135],[48.8566, 2.3522]]).addTo(map);
+polyline = L.polyline([[41.8781, -87.6298],[52.3676, 4.9041]]).addTo(map);
+polyline = L.polyline([[41.8781, -87.6298],[32.7157, -117.1611]]).addTo(map);
+polyline = L.polyline([[-43.5321, 172.6362],[1.3521, 103.8198]]).addTo(map);
+polyline = L.polyline([[6.9271, 79.8612],[-42.8821, 147.3272]]).addTo(map);
+polyline = L.polyline([[51.2277, 6.7735],[38.1157, 13.3615]]).addTo(map);
+polyline = L.polyline([[-75.1, 123.3833],[-66.6667, 140.0056]]).addTo(map);
+polyline = L.polyline([[50.0647, 19.945],[45.4642, 9.19]]).addTo(map);
+polyline = L.polyline([[50.0647, 19.945],[48.2082, 16.3738]]).addTo(map);
+polyline = L.polyline([[42.3314, -83.0458],[52.3676, 4.9041]]).addTo(map);
+polyline = L.polyline([[42.3314, -83.0458],[48.8566, 2.3522]]).addTo(map);
+polyline = L.polyline([[25.2769, 51.5185],[41.9028, 12.4964]]).addTo(map);
+polyline = L.polyline([[50.9848, 11.0299],[48.1351, 11.5820]]).addTo(map);
+polyline = L.polyline([[50.1109, 8.6821],[45.4642, 9.19]]).addTo(map);
+polyline = L.polyline([[50.1109, 8.6821],[39.9042, 116.4074]]).addTo(map);
+polyline = L.polyline([[28.1248, -15.43],[40.4168, -3.7038]]).addTo(map);
+polyline = L.polyline([[-42.8821, 147.3272],[-37.8136, 144.9631]]).addTo(map);
+polyline = L.polyline([[-42.8821, 147.3272],[-74.6736, 164.1256]]).addTo(map);
+polyline = L.polyline([[28.1248, -15.43],[28.1248, -15.43]]).addTo(map);
+polyline = L.polyline([[28.1248, -15.43],[40.4168, -3.7038]]).addTo(map);
+polyline = L.polyline([[28.1248, -15.43],[28.4827, -16.3414]]).addTo(map);
+polyline = L.polyline([[-29.9046, -71.2483],[-33.4489, -70.6693]]).addTo(map);
+polyline = L.polyline([[35.5122, 12.6135],[38.1157, 13.3615]]).addTo(map);
+polyline = L.polyline([[53.4084, -2.9916],[52.3676, 4.9041]]).addTo(map);
+polyline = L.polyline([[51.5074, -0.1278],[34.0522, -118.2437]]).addTo(map);
+polyline = L.polyline([[51.5074, -0.1278],[45.4642, 9.19]]).addTo(map);
+polyline = L.polyline([[51.5074, -0.1278],[37.7749, -122.4194]]).addTo(map);
+polyline = L.polyline([[34.0522, -118.2437],[51.5074, -0.1278]]).addTo(map);
+polyline = L.polyline([[34.0522, -118.2437],[41.9028, 12.4964]]).addTo(map);
+polyline = L.polyline([[40.4168, -3.7038],[28.1248, -15.43]]).addTo(map);
+polyline = L.polyline([[40.4168, -3.7038],[45.4642, 9.19]]).addTo(map);
+polyline = L.polyline([[40.4168, -3.7038],[41.9028, 12.4964]]).addTo(map);
+polyline = L.polyline([[40.4168, -3.7038],[-33.4489, -70.6693]]).addTo(map);
+polyline = L.polyline([[40.4168, -3.7038],[28.4827, -16.3414]]).addTo(map);
+polyline = L.polyline([[40.4168, -3.7038],[45.4384, 12.3277]]).addTo(map);
+polyline = L.polyline([[-37.8136, 144.9631],[25.2769, 51.5185]]).addTo(map);
+polyline = L.polyline([[45.4642, 9.19],[52.3676, 4.9041]]).addTo(map);
+polyline = L.polyline([[45.4642, 9.19],[33.749, -84.388]]).addTo(map);
+polyline = L.polyline([[45.4642, 9.19],[41.3851, 2.1734]]).addTo(map);
+polyline = L.polyline([[45.4642, 9.19],[52.52, 13.405]]).addTo(map);
+polyline = L.polyline([[45.4642, 9.19],[37.5079, 15.083]]).addTo(map);
+polyline = L.polyline([[45.4642, 9.19],[50.0647, 19.945]]).addTo(map);
+polyline = L.polyline([[45.4642, 9.19],[50.1109, 8.6821]]).addTo(map);
+polyline = L.polyline([[45.4642, 9.19],[51.5074, -0.1278]]).addTo(map);
+polyline = L.polyline([[45.4642, 9.19],[40.4168, -3.7038]]).addTo(map);
+polyline = L.polyline([[45.4642, 9.19],[48.1351, 11.5820]]).addTo(map);
+polyline = L.polyline([[45.4642, 9.19],[40.7128, -74.006]]).addTo(map);
+polyline = L.polyline([[45.4642, 9.19],[38.1157, 13.3615]]).addTo(map);
+polyline = L.polyline([[45.4642, 9.19],[48.8566, 2.3522]]).addTo(map);
+polyline = L.polyline([[45.4642, 9.19],[50.0755, 14.4378]]).addTo(map);
+polyline = L.polyline([[45.4642, 9.19],[36.434, 28.2176]]).addTo(map);
+polyline = L.polyline([[45.4642, 9.19],[1.3521, 103.8198]]).addTo(map);
+polyline = L.polyline([[45.4642, 9.19],[43.6047, 1.4442]]).addTo(map);
+polyline = L.polyline([[45.4642, 9.19],[48.2082, 16.3738]]).addTo(map);
+polyline = L.polyline([[45.4642, 9.19],[47.3769, 8.5417]]).addTo(map);
+polyline = L.polyline([[44.9773, -93.2655],[32.7157, -117.1611]]).addTo(map);
+polyline = L.polyline([[48.1351, 11.5820],[50.9848, 11.0299]]).addTo(map);
+polyline = L.polyline([[48.1351, 11.5820],[45.4642, 9.19]]).addTo(map);
+polyline = L.polyline([[48.1351, 11.5820],[52.2297, 21.0122]]).addTo(map);
+polyline = L.polyline([[45.5017, -73.5673],[47.3769, 8.5417]]).addTo(map);
+polyline = L.polyline([[-74.6736, 164.1256],[-75.1, 123.3833]]).addTo(map);
+polyline = L.polyline([[40.8518, 14.2681],[38.1157, 13.3615]]).addTo(map);
+polyline = L.polyline([[40.7128, -74.006],[45.4642, 9.19]]).addTo(map);
+polyline = L.polyline([[40.7128, -74.006],[32.7157, -117.1611]]).addTo(map);
+polyline = L.polyline([[38.1157, 13.3615],[43.6158, 13.5189]]).addTo(map);
+polyline = L.polyline([[38.1157, 13.3615],[52.52, 13.405]]).addTo(map);
+polyline = L.polyline([[38.1157, 13.3615],[51.1079, 17.0385]]).addTo(map);
+polyline = L.polyline([[38.1157, 13.3615],[51.2277, 6.7735]]).addTo(map);
+polyline = L.polyline([[38.1157, 13.3615],[35.5122, 12.6135]]).addTo(map);
+polyline = L.polyline([[38.1157, 13.3615],[45.4642, 9.19]]).addTo(map);
+polyline = L.polyline([[38.1157, 13.3615],[40.8518, 14.2681]]).addTo(map);
+polyline = L.polyline([[38.1157, 13.3615],[48.8566, 2.3522]]).addTo(map);
+polyline = L.polyline([[38.1157, 13.3615],[43.7228, 10.4017]]).addTo(map);
+polyline = L.polyline([[38.1157, 13.3615],[41.9028, 12.4964]]).addTo(map);
+polyline = L.polyline([[38.1157, 13.3615],[36.3932, 25.4615]]).addTo(map);
+polyline = L.polyline([[38.1157, 13.3615],[45.6667, 12.245]]).addTo(map);
+polyline = L.polyline([[38.1157, 13.3615],[45.4384, 12.3277]]).addTo(map);
+polyline = L.polyline([[38.1157, 13.3615],[45.4384, 10.9916]]).addTo(map);
+polyline = L.polyline([[38.1157, 13.3615],[47.3769, 8.5417]]).addTo(map);
+polyline = L.polyline([[48.8566, 2.3522],[33.749, -84.388]]).addTo(map);
+polyline = L.polyline([[48.8566, 2.3522],[45.4642, 9.19]]).addTo(map);
+polyline = L.polyline([[48.8566, 2.3522],[38.1157, 13.3615]]).addTo(map);
+polyline = L.polyline([[48.8566, 2.3522],[-33.4489, -70.6693]]).addTo(map);
+polyline = L.polyline([[39.9042, 116.4074],[50.1109, 8.6821]]).addTo(map);
+polyline = L.polyline([[43.7228, 10.4017],[38.1157, 13.3615]]).addTo(map);
+polyline = L.polyline([[50.0755, 14.4378],[45.4642, 9.19]]).addTo(map);
+polyline = L.polyline([[36.434, 28.2176],[37.9838, 23.7275]]).addTo(map);
+polyline = L.polyline([[41.9028, 12.4964],[33.749, -84.388]]).addTo(map);
+polyline = L.polyline([[41.9028, 12.4964],[44.4949, 11.3426]]).addTo(map);
+polyline = L.polyline([[41.9028, 12.4964],[6.9271, 79.8612]]).addTo(map);
+polyline = L.polyline([[41.9028, 12.4964],[40.4168, -3.7038]]).addTo(map);
+polyline = L.polyline([[41.9028, 12.4964],[38.1157, 13.3615]]).addTo(map);
+polyline = L.polyline([[41.9028, 12.4964],[48.8566, 2.3522]]).addTo(map);
+polyline = L.polyline([[41.9028, 12.4964],[28.0486, -16.7045]]).addTo(map);
+polyline = L.polyline([[41.9028, 12.4964],[38.0189, 12.5183]]).addTo(map);
+polyline = L.polyline([[41.9028, 12.4964],[45.4384, 12.3277]]).addTo(map);
+polyline = L.polyline([[41.9028, 12.4964],[47.3769, 8.5417]]).addTo(map);
+polyline = L.polyline([[32.7157, -117.1611],[33.749, -84.388]]).addTo(map);
+polyline = L.polyline([[32.7157, -117.1611],[42.3314, -83.0458]]).addTo(map);
+polyline = L.polyline([[32.7157, -117.1611],[40.7128, -74.006]]).addTo(map);
+polyline = L.polyline([[32.7157, -117.1611],[37.7749, -122.4194]]).addTo(map);
+polyline = L.polyline([[37.7749, -122.4194],[51.5074, -0.1278]]).addTo(map);
+polyline = L.polyline([[37.7749, -122.4194],[47.3769, 8.5417]]).addTo(map);
+polyline = L.polyline([[-33.4489, -70.6693],[-23.6509, -70.3975]]).addTo(map);
+polyline = L.polyline([[-33.4489, -70.6693],[-34.6037, -58.3816]]).addTo(map);
+polyline = L.polyline([[-33.4489, -70.6693],[4.9225, -52.3135]]).addTo(map);
+polyline = L.polyline([[-33.4489, -70.6693],[-29.9046, -71.2483]]).addTo(map);
+polyline = L.polyline([[-33.4489, -70.6693],[40.4168, -3.7038]]).addTo(map);
+polyline = L.polyline([[36.3932, 25.4615],[38.1157, 13.3615]]).addTo(map);
+polyline = L.polyline([[1.3521, 103.8198],[-43.5321, 172.6362]]).addTo(map);
+polyline = L.polyline([[1.3521, 103.8198],[45.4642, 9.19]]).addTo(map);
+polyline = L.polyline([[28.4827, -16.3414],[28.1248, -15.43]]).addTo(map);
+polyline = L.polyline([[28.4827, -16.3414],[40.4168, -3.7038]]).addTo(map);
+polyline = L.polyline([[28.4827, -16.3414],[41.9028, 12.4964]]).addTo(map);
+polyline = L.polyline([[43.6047, 1.4442],[45.4642, 9.19]]).addTo(map);
+polyline = L.polyline([[38.0189, 12.5183],[43.6158, 13.5189]]).addTo(map);
+polyline = L.polyline([[45.6667, 12.245],[52.3676, 4.9041]]).addTo(map);
+polyline = L.polyline([[45.6667, 12.245],[38.1157, 13.3615]]).addTo(map);
+polyline = L.polyline([[32.2226, -110.9747],[33.749, -84.388]]).addTo(map);
+polyline = L.polyline([[32.2226, -110.9747],[34.0522, -118.2437]]).addTo(map);
+polyline = L.polyline([[52.2297, 21.0122],[45.4642, 9.19]]).addTo(map);
+polyline = L.polyline([[45.4384, 12.3277],[40.4168, -3.7038]]).addTo(map);
+polyline = L.polyline([[45.4384, 12.3277],[38.1157, 13.3615]]).addTo(map);
+polyline = L.polyline([[45.4384, 12.3277],[41.9028, 12.4964]]).addTo(map);
+polyline = L.polyline([[45.4384, 10.9916],[38.1157, 13.3615]]).addTo(map);
+polyline = L.polyline([[48.2082, 16.3738],[50.0647, 19.945]]).addTo(map);
+polyline = L.polyline([[48.2082, 16.3738],[45.4642, 9.19]]).addTo(map);
+polyline = L.polyline([[47.3769, 8.5417],[41.8781, -87.6298]]).addTo(map);
+polyline = L.polyline([[47.3769, 8.5417],[45.4642, 9.19]]).addTo(map);
+polyline = L.polyline([[47.3769, 8.5417],[45.5017, -73.5673]]).addTo(map);
+polyline = L.polyline([[47.3769, 8.5417],[38.1157, 13.3615]]).addTo(map);
+polyline = L.polyline([[47.3769, 8.5417],[41.9028, 12.4964]]).addTo(map);
+polyline = L.polyline([[-43.5321, 172.6362],[-77.846323, 166.668235]]).addTo(map);
+polyline = L.polyline([[-77.846323, 166.668235],[-43.5321, 172.6362]]).addTo(map);
+polyline = L.polyline([[-77.846323, 166.668235],[-74.6736, 164.1256]]).addTo(map);
+polyline = L.polyline([[-74.6736, 164.1256],[-77.846323, 166.668235]]).addTo(map);
+
+
+
+	function onMapClick(e) {
+		popup
+			.setLatLng(e.latlng)
+			.setContent(`You clicked the map at ${e.latlng.toString()}`)
+			.openOn(map);
+	}
+
+	map.on('click', onMapClick);
+
+</script>
+
+
+
+</body>
+</html>
